@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+        <link rel="icon"       type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" type="text/css"     href="style.css">
+        <title>ESP32</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="header__content">
+                <h1>CONTROL VIA WEB DE CARRO ESP32</h1>
+            </div>
+        </div>
+        <div class="mainBox">
+            <div class="content" id="mainBox__streaming">
+                <img src=" " alt="stream">
+            </div>
+
+            <div class="content" id="mainBox__controlBox">
+
+                <button type="button" id="power" onclick="power()">POWER</button>
+                <label class="slider">
+                    <div id="rangeSlider"></div>
+                    <input title="" type="range" orient="vertical" class="rangeHorizontal" min="0" value="256" max="512" id="FwdnBckRangue" oninput="sendFnBDirection(this.value)">
+                </label>
+                <button type="button" id="buzzer" onclick="clicking('buzzer')">CORNETA</button>
+                <button type="button" id="left"   onclick="clicking('left')" >IZQUIERDA</button>
+                <button type="button" id="right"  onclick="clicking('right')">DERECHA</button>
+            </div>
+
+            <div class="content" id="mainBox__dataBox">
+                <div class="mainBox__dataBox-powerStatus">
+                    <div class="mainBox__dataBox-powerStatus-Data"><p>ESTADO</p></div>
+                    <div id="mainBox__dataBox-powerStatus-LED"></div>
+                </div>
+                <div class="mainBox__dataBox-tachometer">
+                    <div class="mainBox__dataBox-tachometer-RPM">
+                        <div id="mainBox__dataBox-tachometer-RPM-value"></div>
+                        <div class="mainBox__dataBox-tachometer-RPM-data">
+                            <p class="data">RPM's</p>
+                        </div>
+                    </div>
+                    <div class="mainBox__dataBox-tachometer-mps">
+                        <div id="mainBox__dataBox-tachometer-mps-value"></div>
+                        <div class="mainBox__dataBox-tachometer-mps-data">
+                            <p class="data">m/s</p>
+                        </div>
+                    </div>
+                    <div class="mainBox__dataBox-tachometer-bar">
+                        <div id="mainBox__dataBox-tachometer-bar-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer__content">
+                <p>
+                    PROYECTO ROBOTICA</br>UNEFA</br>M. LAFONTANT, A. GONZALEZ, S. RAMOS</br>
+                </p>
+            </div>
+        </div>    
+        <script src="main.js"></script>
+    </body>
+</html>

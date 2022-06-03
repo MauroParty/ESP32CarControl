@@ -1,0 +1,270 @@
+/* GLOBAL */
+* {
+    margin: 0;
+    padding:0;
+    font-size:20px;
+    box-sizing: border-box;
+}
+/* CUERPO DE PAGINA */
+body{
+    position:static;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+/* CABEZERA */
+.header{
+    height: 15%;
+    background-color: #313131;
+}
+.header__content{
+    display: inline-block;
+    width: 100%;
+    height: 15%;
+    position: absolute;
+}
+.header__content h1{
+    font-size:1.5em;
+    position:relative;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/* CAJA DEL MENU */
+.mainBox{
+    content:" ";
+    height: 70%;
+    position: relative;
+}
+/* POSICIONAMIENTO DE OBJETOS DEL MENU */
+.content{
+    display: inline-block;
+    content:" ";
+    position: absolute;
+}
+#mainBox__streaming{background-color: #000;}
+#mainBox__controlBox{background-color:#414141;}
+
+/* TELEFONO HORIZONTAL */
+@media(orientation: landscape) {
+    #mainBox__streaming{
+        width: 50%;
+        height: 100%;
+    }
+    #mainBox__controlBox{
+        height: 50%;
+        width: 50%;
+        top: 50%;
+        left: 50%;
+    }
+    #mainBox__dataBox{
+        height: 50%;
+        width: 50%;
+        left: 50%;
+    }
+}
+/* TELEFONO VERTICAL */
+@media(orientation: portrait){
+    #mainBox__streaming{
+        width: 100%;
+        height: 60%;
+    }
+    #mainBox__controlBox{
+        height: 20%;
+        width: 100%;
+        top: 80%;
+    }
+    #mainBox__dataBox{
+        height: 20%;
+        width: 100%;
+        top: 60%;
+    }
+}
+/* contenido de LED de estado */
+.mainBox__dataBox-powerStatus{
+    display: inline-block;
+    height: 50%;
+    width: 100%;
+    content:" ";
+    position: absolute;  
+}
+.mainBox__dataBox-powerStatus-Data{
+    display: inline-block;
+    height: 100%;
+    width: 70%;
+    background-color: #414141;
+    position: absolute;
+    text-align: center;
+    color: #000;
+}
+.mainBox__dataBox-powerStatus-Data p{
+    position:relative;
+}
+#mainBox__dataBox-powerStatus-LED{
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+    background-color: #ff0000; /*Valor por cambiar para el LED*/
+    position: absolute;
+    color: #000;
+    left: 70%;
+}
+/* CONTENIDO DEL TACOMETRO */
+.mainBox__dataBox-tachometer{
+    display: inline-block;
+    height: 50%;
+    width: 100%;
+    content:" ";
+    position: absolute;
+    top: 50%;
+}
+.mainBox__dataBox-tachometer-bar{
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+    background-color: grey;
+    position: absolute;
+    text-align: center;
+    color: #000;
+    left:70%;
+}
+#mainBox__dataBox-tachometer-bar-progress{
+    display:"inline-block";
+    content:' ';
+    width: 1%;                     /*Valor por cambiar para el tacometro*/
+    height: 100%;
+    background-color: #101010;
+    text-align: center;
+    line-height: 32px;
+}
+.mainBox__dataBox-tachometer-RPM{
+    display: inline-block;
+    height: 100%;
+    width: 35%;
+    position: absolute;
+    text-align: center;
+    color: #000;
+}
+#mainBox__dataBox-tachometer-RPM-value{
+    display: inline-block;
+    height: 50%;
+    width: 100%;
+    background-color: #515151;
+    position: absolute;
+    left: 0%;
+    border: #303030 solid 3px;
+    border-left: 0px;
+    border-right: 0px;
+}
+.mainBox__dataBox-tachometer-RPM-data{
+    display: inline-block;
+    height: 50%;
+    width: 100%;
+    background-color: #515151;
+    position: absolute;
+    left: 0%;
+    top:50%;
+    color: #000;
+}
+.mainBox__dataBox-tachometer-mps{
+    display: inline-block;
+    height: 100%;
+    width: 35%;
+    position: absolute;
+    text-align: center;
+    color: #000;
+    left:35%;
+}
+#mainBox__dataBox-tachometer-mps-value{
+    display: inline-block;
+    height: 50%;
+    width: 100%;
+    background-color: #515151;
+    position: absolute;
+    color: #000;
+    left: 0%;
+    border: #303030 solid 3px;
+    border-left: 0px;
+    border-right: 0px;
+}
+.mainBox__dataBox-tachometer-mps-data{
+    display: inline-block;
+    height: 50%;
+    width: 100%;
+    background-color: #515151;
+    position: absolute;
+    color: #000;
+    left: 0%;
+    top:50%;
+}
+.data{
+    position:relative;
+}
+/*BOTONES*/
+button{
+    display: inline-block;
+    background-color: #606060; /*color de boton*/
+    position:absolute;
+    width: 31%;
+    height: 46%;
+    margin: 1% 0% 0% 1%;
+    line-height: 0;
+    border: #202020 solid 3px;
+}
+button:hover{background-color: #404040;  color:#fff;} /*color de boton seleccionado*/
+button:active{background:#303030;}                       /*color de boton presionado*/
+#buzzer{left: 66.66%;}
+#left{top:48%;}
+#right{left:66.66%;top:48%;}
+.rangeHorizontal{
+    display:inline-block;
+    position:absolute;
+    width: 33.33%;
+    height: 95%;
+    left: 33.33%;
+    -webkit-appearance: slider-vertical;
+    opacity: 0;
+}
+/*PIE DE PAGINA*/
+.footer{
+    height:15%;
+    background-color: #313131; /*color de pie de pagina*/
+}
+.footer__content{
+    display: inline-block;
+    width: 100%;
+    height: 15%;
+    position: absolute;
+}
+.footer__content p{
+    position:relative;
+    text-align: center;
+    font-size:0.6em;
+}
+
+p{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+}
+
+#rangeSlider{
+    display:inline-block;
+    width:31%;
+    height: 46%;
+    margin: 0% 0% 0% 1%;
+    left:33.33%;
+    position: absolute;
+    content:' ';
+    background-color:#606060;
+    bottom: 28%;
+    border: #202020 solid 3px;
+}
+#rangeSlider:hover{
+    background-color: #404040;
+}
+
+/* NO ME CRITIQUEN, ESTOY CHIQUITO EN CSS, HICE LO MEJOR QUE PUDE */
